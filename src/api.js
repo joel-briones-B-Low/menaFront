@@ -1,9 +1,7 @@
 // Detecta automáticamente el entorno
 // En desarrollo usa localhost, en producción usa la URL de Render
-export const API_URL = import.meta.env.VITE_API_URL ||
-    (window.location.hostname === 'localhost'
-        ? 'http://localhost:3000/api'
-        : 'https://menaback.onrender.com/api');
+export const API_URL =
+    'https://menaback.onrender.com/api'
 
 export async function buscarProductos(q) {
     const res = await fetch(`${API_URL}/items?q=${encodeURIComponent(q)}`);
